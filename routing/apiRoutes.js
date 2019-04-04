@@ -11,9 +11,9 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-    
+      var match 
       var newfriend = req.body;
-      var totalDifference = 0;
+      var totalDifference = 10000;
      
         // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
         // It will do this by sending out the value "true" have a table
@@ -30,11 +30,15 @@ module.exports = function(app) {
           if (newTotalDifference < totalDifference) {
             totalDifference = newTotalDifference;
             match = friends[i];
+            console.log(match);
+
+            
             
           }
-          
+           
         }
          friends.push(req.body);
-          res.json(true);
+          res.json(match);
+         
     });
 }

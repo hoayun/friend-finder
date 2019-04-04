@@ -17,23 +17,24 @@
     crossorigin="anonymous"></script>
 </head>
 
-<body>
-  <h1>Survey Questions</h1>
+<body class="bg-dark">
+  <div class="container bg-primary rounded">
+  <h1 class="text-center">Survey Questions</h1>
   <br>
-  <h3>About you</h3>
+  <h3 class="text-center">Tell us about yourself</h3>
   <form>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Name</label>
+      <label for="exampleInputEmail1">What's your name?</label>
       <input type="text" class="form-control" id="friendName" aria-describedby="emailHelp">
 
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Image link</label>
+      <label for="exampleInputPassword1">Link an image of yourself</label>
       <input type="text" class="form-control" id="piclink">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">How much do you like dogs?</label>
       <select class="form-control" id="q1">
         <option>1</option>
         <option>2</option>
@@ -43,7 +44,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">How much do you like cats?</label>
       <select  class="form-control" id="q2">
         <option>1</option>
         <option>2</option>
@@ -53,7 +54,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">How intelligent do you consider yourself to be?</label>
       <select  class="form-control" id="q3">
         <option>1</option>
         <option>2</option>
@@ -63,7 +64,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">How often do you read books?</label>
       <select  class="form-control" id="q4">
         <option>1</option>
         <option>2</option>
@@ -73,7 +74,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">How often do you play sports?</label>
       <select  class="form-control" id="q5">
         <option>1</option>
         <option>2</option>
@@ -83,7 +84,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">You rarely get carried away by fantasies and ideas.</label>
       <select  class="form-control" id="q6">
         <option>1</option>
         <option>2</option>
@@ -93,7 +94,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">In a discussion, truth should be more important than people’s sensitivities.</label>
       <select  class="form-control" id="q7">
         <option>1</option>
         <option>2</option>
@@ -103,7 +104,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">People can rarely upset you.</label>
       <select  class="form-control" id="q8">
         <option>1</option>
         <option>2</option>
@@ -113,7 +114,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
       <select  class="form-control" id="q9">
         <option>1</option>
         <option>2</option>
@@ -123,7 +124,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example  select</label>
+      <label for="exampleFormControlSelect2">You feel more energetic after spending time with a group of people.</label>
       <select  class="form-control" id="q10">
         <option>1</option>
         <option>2</option>
@@ -132,7 +133,7 @@
         <option>5</option>
       </select>
     </div>
-    <button type="submit" id="submit" class="btn btn-primary " data-toggle="modal" data-target=".bd-example-modal-lg">Submit</button>
+    <button type="submit" id="submit" class="btn btn-success " data-toggle="modal" data-target=".bd-example-modal-lg">Submit</button>
   </form>
   <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -142,7 +143,7 @@
     </div>
   </div>
 
-
+</div>
 
   <script type="text/javascript">
     // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
@@ -150,7 +151,8 @@
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the friends.js file or waitinglist-data.js file
 
-    $("#submit").on("click", function () {
+    $("#submit").on("click", function (event) {
+      event.preventDefault();
       if (($("#q1").val()) === "" || ($("#friendName").val()) === "" || ($("#q2").val()) === "" || ($("#q3").val()) === "" || ($("#q4").val()) === "" || ($("#q5").val()) === "" || ($("#q6").val()) === "" || ($("#q7").val()) === "" || ($("#q8").val()) === "" || ($("#q9").val()) === "" || ($("#q10").val()) === "" || ($("#piclink").val()) === "") {
         alert('you did not fill out one of the fields');
         return false;
@@ -179,16 +181,13 @@
 
         $.post("/api/friends", newfriend,
           function (data) {
-            console.log(newfriend.scores);
-            if (data) {
-              alert("success")
-            }
-            else {
-              alert("no data")
-            }
+            $("#friendName").val("");
+            $("#piclink").val("");
+            
           })
       
       }
+      
     })
 
   </script>

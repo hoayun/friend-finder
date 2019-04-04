@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Friend Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -139,12 +139,14 @@
       <button type="submit" id="submit" class="btn btn-success " data-toggle="modal"
         data-target=".bd-example-modal-lg">Submit</button>
     </form>
-    <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+    <div id="myModal" class="modal fade bd-example-modal-lg bg-success" tabindex="-1" role="dialog"
       aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content text-center">
           <h3 id="matchName"></h3>
+          <div class="text-center">
           <img src="" id="matchPic" style="max-width: 300px;" style="max-height: 250px;">
+          </div>
         </div>
 
       </div>
@@ -192,7 +194,7 @@
 
         $.post("/api/friends", newfriend)
           .then(function (data) {
-            $("#matchName").text(data.name);
+            $("#matchName").text(data.name+" is your best match");
             $("#matchPic").attr("src", data.photo);
            // console.log(data.name);
             $("#friendName").val("");

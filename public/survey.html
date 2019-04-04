@@ -1,152 +1,189 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Survey Questions</h1>
-    <br>
-    <h3>About you</h3>
-        <form>
-            <form action="/api/friends" method="post">
+  <h1>Survey Questions</h1>
+  <br>
+  <h3>About you</h3>
+  <form>
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-               
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Image link</label>
-                  <input type="password" class="form-control" id="q1">
-                </div>
-                <div class="form-group">
-                        <label for="exampleFormControlSelect2">Example multiple select</label>
-                        <select multiple class="form-control" id="q2">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                            <label for="exampleFormControlSelect2">Example multiple select</label>
-                            <select multiple class="form-control" id="q3">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                                <label for="exampleFormControlSelect2">Example multiple select</label>
-                                <select multiple class="form-control" id="exampleFormControlSelect2">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                                      <option>1</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                    </select>
-                                  </div>
-                                  <div class="form-group">
-                                        <label for="exampleFormControlSelect2">Example multiple select</label>
-                                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                                          <option>1</option>
-                                          <option>2</option>
-                                          <option>3</option>
-                                          <option>4</option>
-                                          <option>5</option>
-                                        </select>
-                                      </div>
-                                      <div class="form-group">
-                                            <label for="exampleFormControlSelect2">Example multiple select</label>
-                                            <select multiple class="form-control" id="exampleFormControlSelect2">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                            </select>
-                                          </div>
-                                          <div class="form-group">
-                                                <label for="exampleFormControlSelect2">Example multiple select</label>
-                                                <select multiple class="form-control" id="exampleFormControlSelect2">
-                                                  <option>1</option>
-                                                  <option>2</option>
-                                                  <option>3</option>
-                                                  <option>4</option>
-                                                  <option>5</option>
-                                                </select>
-                                              </div>
-                                              <div class="form-group">
-                                                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                                                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                                                      <option>1</option>
-                                                      <option>2</option>
-                                                      <option>3</option>
-                                                      <option>4</option>
-                                                      <option>5</option>
-                                                    </select>
-                                                  </div>
-                                                  <div class="form-group">
-                                                        <label for="exampleFormControlSelect2">Example multiple select</label>
-                                                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                                                          <option>1</option>
-                                                          <option>2</option>
-                                                          <option>3</option>
-                                                          <option>4</option>
-                                                          <option>5</option>
-                                                        </select>
-                                                      </div>
-                                                      <div class="form-group">
-                                                            <label for="exampleFormControlSelect2">Example multiple select</label>
-                                                            <select multiple class="form-control" id="exampleFormControlSelect2">
-                                                              <option>1</option>
-                                                              <option>2</option>
-                                                              <option>3</option>
-                                                              <option>4</option>
-                                                              <option>5</option>
-                                                            </select>
-                                                          </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-              
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" class="form-control" id="friendName" aria-describedby="emailHelp">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the friends.js file or waitinglist-data.js file
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image link</label>
+      <input type="text" class="form-control" id="piclink">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select class="form-control" id="q1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q3">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q4">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q5">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q6">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q7">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q8">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q9">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example  select</label>
+      <select  class="form-control" id="q10">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <button type="submit" id="submit" class="btn btn-primary ">Submit</button>
+  </form>
 
-  $(".submit").on("click", function(event) {
-    event.preventDefault();
 
-    // Here we grab the form elements
-    var newReservation = {
-      customerName: $("#reserve-name").val().trim(),
-      phoneNumber: $("#reserve-phone").val().trim(),
-      customerEmail: $("#reserve-email").val().trim(),
-      customerID: $("#reserve-unique-id").val().trim()
-    };
-  })
-</script>
+
+  <script type="text/javascript">
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the friends.js file or waitinglist-data.js file
+
+    $("#submit").on("click", function () {
+      if (($("#q1").val()) === "" || ($("#friendName").val()) === "") {
+        alert('you did not fill out one of the fields');
+        return false;
+      }
+      else {
+
+
+        // Here we grab the form elements
+        var newfriend = {
+          name: $("#friendName").val().trim(),
+          photo: $("#piclink").val().trim(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+        ]
+
+        };
+
+        $.post("/api/friends", newfriend,
+          function (data) {
+            console.log(data);
+            if (data) {
+              alert("success")
+            }
+            else {
+              alert("no data")
+            }
+          })
+      }
+    })
+
+  </script>
 </body>
+
 </html>

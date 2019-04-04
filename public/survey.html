@@ -132,8 +132,15 @@
         <option>5</option>
       </select>
     </div>
-    <button type="submit" id="submit" class="btn btn-primary ">Submit</button>
+    <button type="submit" id="submit" class="btn btn-primary " data-toggle="modal" data-target=".bd-example-modal-lg">Submit</button>
   </form>
+  <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
 
 
 
@@ -144,7 +151,7 @@
     // In this case the associated code "saves" the data to the friends.js file or waitinglist-data.js file
 
     $("#submit").on("click", function () {
-      if (($("#q1").val()) === "" || ($("#friendName").val()) === "") {
+      if (($("#q1").val()) === "" || ($("#friendName").val()) === "" || ($("#q2").val()) === "" || ($("#q3").val()) === "" || ($("#q4").val()) === "" || ($("#q5").val()) === "" || ($("#q6").val()) === "" || ($("#q7").val()) === "" || ($("#q8").val()) === "" || ($("#q9").val()) === "" || ($("#q10").val()) === "" || ($("#piclink").val()) === "") {
         alert('you did not fill out one of the fields');
         return false;
       }
@@ -172,7 +179,7 @@
 
         $.post("/api/friends", newfriend,
           function (data) {
-            console.log(data);
+            console.log(newfriend.scores);
             if (data) {
               alert("success")
             }
@@ -180,6 +187,7 @@
               alert("no data")
             }
           })
+      
       }
     })
 

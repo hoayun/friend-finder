@@ -11,11 +11,30 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
+    
+      var newfriend = req.body;
+      var totalDifference = 0;
+     
         // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware
-        
-          friends.push(req.body);
+         for (i = 0; i < friends.length; i++) {
+          var newTotalDifference = 0;
+    
+          // Runs through the users finding the difference between users scores and potential matches
+          for (x = 0; x < friends[i].scores.length; x++){
+            
+            newTotalDifference += Math.abs(parseInt(newfriend.scores[x]) - parseInt(friends[i].scores[x]));
+          }
+          // Checks to see if the users scores are closer to
+          if (newTotalDifference < totalDifference) {
+            totalDifference = newTotalDifference;
+            match = friends[i];
+            
+          }
+          
+        }
+         friends.push(req.body);
           res.json(true);
     });
 }
